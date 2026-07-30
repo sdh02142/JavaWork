@@ -23,6 +23,9 @@ public class Grade {
 		int total = kor + eng + math;
 		double avg = total / 3.0;
 		
+		/*class 사용 없이 소수점 표기 제한해보기*/
+		avg = avg - avg%0.01;
+		
 		/*switch문*/
 		char grade = switch ((int)(avg/10)) {
 		case 10, 9 -> 'A';
