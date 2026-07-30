@@ -1,4 +1,4 @@
-package ex0729.report;
+package ex0730.ch04;
 
 public class Star {
 
