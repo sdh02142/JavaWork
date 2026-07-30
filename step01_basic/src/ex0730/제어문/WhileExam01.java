@@ -123,6 +123,7 @@ public class WhileExam01 {
 					init++;
 				}
 				System.out.println();
+				System.out.println();
 				//3. 구구단 출력  -  for 문안에 for문이용
 				/*
 						 * 
@@ -134,10 +135,27 @@ public class WhileExam01 {
 						 *  2*9=18              9*9=81
 						 * 
 						 * */
-				for(int i = 1; i<=9; i++) {
-					for(int j = 2; j<=9; j++) {
-						System.out.print(j + "*" + i + "=" + (i*j) + " ");
+//				for(int i = 1; i<=9; i++) {
+//					for(int j = 2; j<=9; j++) {
+//						System.out.print(j + "*" + i + "=" + (i*j) + " ");
+//					}
+//					System.out.println();
+//				}
+				a = true;
+				b = true;
+				init = 1;
+				initSec = 2;
+				while(a) {
+					while(b) {
+						System.out.print(initSec + "*" + init + "=" + (init*initSec) + " ");
+						if (initSec >= 9) {
+							initSec = 2;
+							break;
+						}
+						initSec++;
 					}
+					if (init >= 9) a = false;
+					init++;
 					System.out.println();
 				}
 	}
