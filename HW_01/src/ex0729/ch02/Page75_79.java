@@ -1,5 +1,11 @@
 package ex0729.ch02;
 
+/**
+ * @author 주우진
+ * 날짜 : 2026-07-29
+ * 주제 : chapter 02
+ * */
+
 public class Page75_79 {
 
 	public static void main(String[] args) {

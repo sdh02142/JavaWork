@@ -1,5 +1,11 @@
 package ex0730.ch04;
 
+/**
+ * @author 주우진
+ * 날짜 : 2026-07-30
+ * 주제 : chapter 04 - 07번
+ * */
+
 import java.util.Scanner;
 
 public class Exercise07 {

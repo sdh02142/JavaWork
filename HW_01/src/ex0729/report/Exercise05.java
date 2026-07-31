@@ -1,5 +1,11 @@
 package ex0729.report;
 
+/**
+ * @author 주우진
+ * 날짜 : 2026-07-29
+ * 주제 : chapter 03 05번
+ * */
+
 public class Exercise05 {
 
 	public static void main(String[] args) {
