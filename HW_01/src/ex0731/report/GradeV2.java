@@ -75,8 +75,6 @@ public class GradeV2 {
 	public static void main(String[] args) {
 		boolean r = true;
 		
-		int balance = 0;
-		
 		Scanner sc = new Scanner(System.in);
 		
 		String inputValue = "";
