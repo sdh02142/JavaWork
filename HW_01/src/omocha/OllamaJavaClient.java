@@ -12,7 +12,7 @@ public class OllamaJavaClient {
         // Ollama API 주소 및 설정
         String url = "http://localhost:11434/api/generate";
         String modelName = "qwen3:14b-custom"; // 사용 중인 Ollama 모델명 입력
-        String prompt = "지금 내가 질문하는 대상자인 너는 뭐야?";
+        String prompt = "이 문장은 거짓이다. 옆의 문장의 참 거짓을 판단해줘";
 
         // JSON 요청 본문 생성 (스트리밍 비활성화: "stream": false)
         String jsonBody = String.format(
@@ -47,6 +47,7 @@ public class OllamaJavaClient {
 //                int end = res.indexOf("\",\"thinking\":\"");
 //
 //                value2 = res.substring(end, 0);
+            	
             	
                 System.out.println("--- Ollama 응답 완료 ---");
                 System.out.println(res);

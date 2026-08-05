@@ -28,6 +28,7 @@ public class Page201_09 {
 					System.out.print("학생 수> ");
 					inputValue = sc.next();
 					studentNum = Integer.parseInt(inputValue);
+					scores = new int[studentNum];
 					
 					System.out.println();
 					break;
@@ -35,7 +36,7 @@ public class Page201_09 {
 					if(studentNum == 0) {
 						System.out.println("학생 수를 먼저 입력해주세요.");
 					} else {
-						scores = new int[studentNum];
+//						scores = new int[studentNum];
 						for(int i = 0; i<scores.length; i++) {
 							System.out.print("scores[" + i + "]> ");
 							inputValue = sc.next();
@@ -56,8 +57,8 @@ public class Page201_09 {
 					if(scores == null) {
 						System.out.println("점수를 먼저 입력해주세요.");
 					} else {
-						int temp = 0;
-						int avg = 0;
+						int temp = Integer.MIN_VALUE;
+						double avg = 0;
 						for(int i = 0; i < scores.length;i++) {
 							avg+=scores[i];
 							if(scores[i]>=temp) temp=scores[i];
