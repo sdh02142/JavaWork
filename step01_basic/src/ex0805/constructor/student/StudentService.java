@@ -1,4 +1,4 @@
-package ex0804.array.students;
+package ex0805.constructor.student;
 
 /**
  * 학생의 정보를 관리 하는 서비스(등록, 수정, 검색,....)
@@ -10,21 +10,19 @@ public class StudentService {
 	/**
 	 * 초기치데이터 3명 정도 세팅하기 
 	 * */
-	public void init(String [][] a) {
-		if(a.length <= arr.length) cnt = a.length;
+	public StudentService(String data[][]) {
+		if(data.length <= arr.length) cnt = data.length;
 		else cnt = arr.length;
 		 for(int i = 0; i<cnt; i++) {
-			 this.arr[i] = this.newStudent(a[i]);
+			 this.arr[i] = this.newStudent(data[i]);
 		 }
-	 }
+	}
+	
 	/**
 	 *  Student객체를 생성해서 리턴해주는 메소드 작성
 	 * */
 	 private Student newStudent(String [] a) {
-		 Student s = new Student();
-		 s.setName(a[0]);
-		 s.setAge(Integer.parseInt(a[1]));
-		 s.setAddr(a[2]);
+		 Student s = new Student(a);
 		 return s;
 	 }
 	 

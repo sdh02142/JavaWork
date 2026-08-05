@@ -1,4 +1,4 @@
-package ex0804.array.students;
+package ex0805.constructor.student;
 
 public class StudentTest {
 	public static void main(String[] args) {
@@ -9,8 +9,8 @@ public class StudentTest {
 		};
 		
 		System.out.println("***학생 관리 프로그램 시작합니다.******");
-		StudentService service = new StudentService();//StudentService의 전역변수들이 초기화 
-		service.init(data); // 초기치데이터 세팅
+		StudentService service = new StudentService(data);//StudentService의 전역변수들이 초기화 
+//		service.init(data); // 초기치데이터 세팅
 		
 		//전체학생정보 출력
 		Student [] sAll = service.selectAll();
@@ -46,10 +46,7 @@ public class StudentTest {
 		
 		//수정하기 
 		System.out.println("--4. 수정하기 -----");
-		Student st2 =new Student();
-		st2.setName("미미");//조건
-		st2.setAge(23);
-		st2.setAddr("대전");
+		Student st2 =new Student("미미", 23, "대전");
 		
 		if (service.update(st2)) EndView.printMessage("수정되었습니다.");
 		else EndView.printMessage("수정할 수 없습니다.");

@@ -4,12 +4,16 @@ package ex0804.array.students;
  * 학생의 정보를 관리 하는 서비스(등록, 수정, 검색,....)
  * */
 public class StudentService {
-	private Student arr [] = new Student[5];
+	private Student arr [] = new Student[6];
+	
+	public static int cnt;
 	/**
 	 * 초기치데이터 3명 정도 세팅하기 
 	 * */
 	public void init(String [][] a) {
-		 for(int i = 0; i<3; i++) {
+		if(a.length <= arr.length) cnt = a.length;
+		else cnt = arr.length;
+		 for(int i = 0; i<cnt; i++) {
 			 this.arr[i] = this.newStudent(a[i]);
 		 }
 	 }
@@ -23,37 +27,41 @@ public class StudentService {
 		 s.setAddr(a[2]);
 		 return s;
 	 }
-	
-	
+	 
+	 private Student newStudent(Student s) {
+		 Student s1 = new Student();
+		 s1.setName(s.getName());
+		 s1.setAge(s.getAge());
+		 s1.setAddr(s.getAddr());
+		 return s1;
+	 }	
 
 	 /**
 	   학생의 정보 등록하기 
 	    : 배열의 경계를 벗어나면 더이상 추가할수 없습니다. 메시지출력.
 	      추가가 성공하면 "등록되었습니다" 메시지를 출력
 	  **/
-	 public void insert(Student s) {
-		 boolean b = true;
-		 
+	 public int insert(Student s) {
+		 int b = -1;
 		 for(int i = 0; i<this.arr.length; i++) {
 			 if(arr[i] == null) {
-				 arr[i] = s;
-				 System.out.println("등록되었습니다.");
-				 b = false;
+				 arr[i] = this.newStudent(s);
+				 b = 1;
+				 break;
+			 } else if(this.selectByName(s.getName()) != null) {
+				 b = 0;
 				 break;
 			 }
 		 }
-		 if (b) System.out.println("더 이상 추가할 수 없습니다.");
+		 return b;
 	 }
 	 
 	
 	/**
 	 * 전체 학생의 정보 조회하기
 	 * */
-	 public void selectAll() {
-		 for(int i = 0; i<this.arr.length; i++) {
-			 if(this.arr[i] != null) System.out.println("이름 : " + arr[i].getName() + ", 나이 : " + arr[i].getAge() + ", 주소 : " + arr[i].getAddr());
-			 else continue;
-		 }
+	 public Student[] selectAll() {
+		 return arr;
 	 }
 	
 	/**
@@ -61,18 +69,14 @@ public class StudentService {
 	 *  : 이름에 해당하는 학생이 있으면 학생의 이름, 나이, 주소를출력하고
 	 *     없으면 "찾는정보가 없습니다." 출력한다.
 	 * */
-	 public void selectByName(String s) {
-		 boolean b = true;
-		 
+	 public Student selectByName(String s) {		 
 		 for(int i = 0; i<this.arr.length; i++) {
-			 if(this.arr[i] == null) continue;
-			 if(this.arr[i].getName().equals(s)) {
-				 System.out.println("이름 : " + arr[i].getName() + ", 나이 : " + arr[i].getAge() + ", 주소 : " + arr[i].getAddr());
-				 b = false;
-				 break;
+			 if(arr[i] == null) continue;
+			 else if(this.arr[i].getName().equals(s)) {
+				 return arr[i];
 			 }
 		 }
-		 if (b) System.out.println("찾는 정보가 없습니다.");
+		 return null;
 	 }
 	
 	
@@ -84,20 +88,13 @@ public class StudentService {
 	 *   @param : Student
 	 *   @return : void
 	 * */
-	 public void update(Student s) {
-		 boolean b = true;
-		 
-		 for(int i = 0; i<this.arr.length; i++) {
-			 if(this.arr[i] == null) continue;
-			 if(this.arr[i].getName().equals(s.getName())) {
-				 this.arr[i].setAge(s.getAge());
-				 this.arr[i].setAddr(s.getAddr());
-				 System.out.println("수정되었습니다.");
-				 b = false;
-				 break;
-			 }
-		 }
-		 if (b) System.out.println("수정할 수 없습니다.");
+	 public boolean update(Student s) {
+		 Student b = this.selectByName(s.getName());
+		 if (b != null) {
+			 b.setAge(s.getAge());
+			 b.setAddr(s.getAddr());
+			 return true;
+		 } else return false;
 	 }
 
 }
