@@ -2,9 +2,6 @@ package ex0806.report;
 
 import java.util.Scanner;
 
-import ex0805.constructor.goods.sol.EndView;
-import ex0805.constructor.goods.sol.Goods;
-
 public class BankApplication {
 	public static void main(String[] args) {
 		final int ACCOUNT_SIZE = 100;
