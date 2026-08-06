@@ -23,7 +23,7 @@ public class GoodsService{
 			 
 		};
    */
-   public void init(String [][] data){
+   public GoodsService(String [][] data){
 	  for(int i = 0; i<data.length; i++) {
 		  this.goodsArr[i] = this.create(data[i]);
 		  count++;
@@ -92,6 +92,7 @@ public class GoodsService{
 	           없으면 null 리턴
    */
    public Goods selectByCode(String code){
+	   code = code.toUpperCase();
 	   for(int i = 0; i<count; i++) {
 		   if(this.goodsArr[i].getCode().equals(code)) {
 				 return goodsArr[i];

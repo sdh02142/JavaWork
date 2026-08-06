@@ -12,7 +12,7 @@ public class LMStudioClient {
             {
               "model": "qwen/qwen3.5-9b",
               "messages": [
-                {"role": "user", "content": "안녕? 자바에서 인사해줘."}
+                {"role": "user", "content": "응답 테스트하는 중이야. 뭔가 대답해줘."}
               ],
               "temperature": 0.7
             }
