@@ -1,6 +1,6 @@
 package ex0807.report.sample02;
 
-public class Employee {
+public abstract class Employee {
 	private int empNo;
 	private String eName;
 	private String job;
@@ -68,7 +68,7 @@ public class Employee {
 		this.deptName = deptName;
 	}
 	
-	public void message() {}
+	public abstract void message();
 
 	@Override
 	public String toString() {
