@@ -1,0 +1,27 @@
+package ex0811.board;
+
+public class QaBoardServiceImpl implements BasicBoardService {
+
+	@Override
+	public int register(Board b) {
+		return 0;
+	}
+
+	@Override
+	public int edit(Board b) {
+		return 0;
+	}
+
+	@Override
+	public int delete(int primaryKey) {
+		System.out.println("QaBoardServiceImpl Class's delete() call");
+		return 0;
+	}
+
+//	@Override
+//	public void searchAll(Board [] b) {
+//		for(Board ba : b) {
+//			System.out.println(ba);
+//		}
+//	}
+}
