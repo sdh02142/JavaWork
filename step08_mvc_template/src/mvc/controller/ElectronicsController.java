@@ -5,6 +5,7 @@ import java.util.List;
 import mvc.dto.Electronics;
 import mvc.service.ElectronicsService;
 import mvc.service.ElectronicsServiceImpl;
+import mvc.view.FailView;
 import mvc.view.SuccessView;
 
 
@@ -33,7 +34,11 @@ public class ElectronicsController {
      */
    
     public void insert(Electronics electronics) {
-       
+       try {
+    	   service.insert(electronics);
+       } catch (Exception e) {
+    	   FailView.errorMessage(e.getMessage());
+       }
     }
     
     
@@ -43,7 +48,11 @@ public class ElectronicsController {
      * @param modelNo
      */
     public void searchByModelNo(int modelNo) {
-    	
+    	try {
+    		SuccessView.printSearchByModelNo(service.searchByModelNo(modelNo));
+        } catch (Exception e) {
+        	FailView.errorMessage(e.getMessage());
+        }
     } 
 
     /**
@@ -51,7 +60,11 @@ public class ElectronicsController {
      * @param electronics
      */
     public void update(Electronics electronics) {
-    	
+    	try {
+      	   service.update(electronics);
+         } catch (Exception e) {
+        	 FailView.errorMessage(e.getMessage());
+         }
     }
     
     /**
@@ -59,7 +72,11 @@ public class ElectronicsController {
      * @param electronics
      */
 	public void deleteModelNo(int modelNo) {
-		
+		try {
+	      	   service.delete(modelNo);
+	         } catch (Exception e) {
+	        	 FailView.errorMessage(e.getMessage());
+	         }
 	}
 	
 	/**
@@ -68,7 +85,7 @@ public class ElectronicsController {
      * @return
      */
     public void selectSortByPrice() {
-    	
+    	SuccessView.printAll(service.selectSortByPrice());
     }
     
 }

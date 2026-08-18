@@ -39,6 +39,7 @@ public class MenuView{
 				   break;
 				   case "5" : 
 		                 this.inputDelete();
+		                 break;
 				   case "6" : 
 					   controller.selectSortByPrice();
 					   break;
@@ -80,8 +81,6 @@ public class MenuView{
        System.out.print("찾을 전자제품 모델번호는? ");
         int modelNo = Integer.parseInt(sc.nextLine());
 		controller.searchByModelNo(modelNo);
-
-   
 	}
 
 
