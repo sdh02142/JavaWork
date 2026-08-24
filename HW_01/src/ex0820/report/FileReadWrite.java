@@ -39,6 +39,7 @@ public class FileReadWrite {
 	             			fos = new FileOutputStream(path);
 	             			String text = weight + ":" + password;
 	             			fos.write(text.getBytes());
+	             			fos.flush();
 	             		 } catch(Exception e) {
 	             			 e.printStackTrace();
 	             		 } finally {
