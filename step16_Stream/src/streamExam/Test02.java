@@ -16,9 +16,7 @@ public class Test02 {
                  new Student("찬범", 23, 92.3, "Computer Science"),
                  new Student("현솔", 25, 81.7, "Physics")
         );
-
         
-       
-
+        System.out.println(students.stream().max(Comparator.comparingInt(Student::getAge)).orElse(null));
     }
 }

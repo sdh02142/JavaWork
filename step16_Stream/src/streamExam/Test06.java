@@ -16,13 +16,5 @@ public class Test06 {
                  new Student("찬범", 23, 92.3, "Computer Science"),
                  new Student("현솔", 25, 81.7, "Physics")
         );
-
-        
-       
-
-
-
-
-
     }
 }

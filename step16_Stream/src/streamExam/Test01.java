@@ -15,8 +15,7 @@ public class Test01 {
             new Student("현솔", 25, 81.7, "Physics")
         );
 
-       
-
-       // System.out.println("Computer Science 전공 평균 점수: " + ?);
+        Map<String, Double> re = students.stream().collect(Collectors.groupingBy(Student::getMajor,Collectors.averagingDouble(Student::getScore)));
+       System.out.println("Computer Science 전공 평균 점수: " + re.get("Computer Science"));
     }
 }
