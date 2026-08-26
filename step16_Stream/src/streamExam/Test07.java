@@ -3,6 +3,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * 학생의 전공과 점수 목록을 출력 (map + collect)
@@ -16,13 +17,6 @@ public class Test07 {
                  new Student("찬범", 23, 92.3, "Computer Science"),
                  new Student("현솔", 25, 81.7, "Physics")
         );
-
-        
-        
-
-
-
-
-
+        System.out.println(students.stream().map(s->s.getMajor() + " : " + s.getScore()).collect(Collectors.toList()));
     }
 }

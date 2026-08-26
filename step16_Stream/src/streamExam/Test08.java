@@ -16,13 +16,6 @@ public class Test08 {
                  new Student("찬범", 23, 92.3, "Computer Science"),
                  new Student("현솔", 25, 81.7, "Physics")
         );
-
-        
-       
-
-
-
-
-
+        System.out.println(students.stream().filter(s->s.getScore()>=90).map(s->s.getMajor().toUpperCase()).collect(Collectors.toList()));
     }
 }
