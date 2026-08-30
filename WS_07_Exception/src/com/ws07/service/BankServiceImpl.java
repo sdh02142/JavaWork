@@ -30,9 +30,9 @@ public class BankServiceImpl implements BankService{
 		userList = new ArrayList<UserDto>(); 
 		 accountList = new ArrayList<AccountDto>(); 
 
-		userList.add( new UserDto(111, "홍길동", "hong@gildong@com", "010-1111-1111", false) );
-		userList.add( new UserDto(222, "이길동", "lee@gildong@com", "010-2222-2222", true) );
-		userList.add( new UserDto(333, "삼길동", "sam@gildong@com", "010-3333-3333", false) );
+		userList.add( new UserDto(111, "홍길동", "hong@gildong.com", "010-1111-1111", false) );
+		userList.add( new UserDto(222, "이길동", "lee@gildong.com", "010-2222-2222", true) );
+		userList.add( new UserDto(333, "삼길동", "sam@gildong.com", "010-3333-3333", false) );
 		
 		accountList.add( new InstallAccountDto(20, "00200202002002", 1000, 111, 12, 10000) );
 		

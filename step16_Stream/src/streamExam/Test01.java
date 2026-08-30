@@ -17,5 +17,7 @@ public class Test01 {
 
         Map<String, Double> re = students.stream().collect(Collectors.groupingBy(Student::getMajor,Collectors.averagingDouble(Student::getScore)));
        System.out.println("Computer Science 전공 평균 점수: " + re.get("Computer Science"));
+       
+       System.out.println("Computer Science 전공 평균 점수: " + students.stream().filter(s->s.getMajor().equals("Computer Science")).mapToDouble(Student::getScore).average().orElse(0.0));
     }
 }
