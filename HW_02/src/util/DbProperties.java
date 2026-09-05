@@ -1,0 +1,13 @@
+package util;
+
+/**
+ * db설정 정보를 상수로 관리
+ * */
+
+public interface DbProperties {
+	public static final String DRIVER_NAME="com.mysql.cj.jdbc.Driver";
+	
+	 String URL="jdbc:mysql://localhost:3306/hw01";
+	 String USER_ID="main";
+	 String USER_PASSWORD="admin";
+}
